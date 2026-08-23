@@ -16,3 +16,8 @@ model News {
   Description String
   createAt    DateTime @default(now())
 }
+
+model Information {
+  n_id Int @id @default(autoincrement())
+  description String
+}
