@@ -397,7 +397,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  News: 'News'
+  News: 'News',
+  Information: 'Information'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -413,7 +414,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "news"
+    modelProps: "news" | "information"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -491,6 +492,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Information: {
+      payload: Prisma.$InformationPayload<ExtArgs>
+      fields: Prisma.InformationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.InformationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.InformationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        findFirst: {
+          args: Prisma.InformationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.InformationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        findMany: {
+          args: Prisma.InformationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>[]
+        }
+        create: {
+          args: Prisma.InformationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        createMany: {
+          args: Prisma.InformationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.InformationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>[]
+        }
+        delete: {
+          args: Prisma.InformationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        update: {
+          args: Prisma.InformationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        deleteMany: {
+          args: Prisma.InformationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.InformationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.InformationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>[]
+        }
+        upsert: {
+          args: Prisma.InformationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        aggregate: {
+          args: Prisma.InformationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateInformation>
+        }
+        groupBy: {
+          args: Prisma.InformationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InformationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.InformationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InformationCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -538,6 +613,14 @@ export const NewsScalarFieldEnum = {
 } as const
 
 export type NewsScalarFieldEnum = (typeof NewsScalarFieldEnum)[keyof typeof NewsScalarFieldEnum]
+
+
+export const InformationScalarFieldEnum = {
+  n_id: 'n_id',
+  description: 'description'
+} as const
+
+export type InformationScalarFieldEnum = (typeof InformationScalarFieldEnum)[keyof typeof InformationScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -769,6 +852,7 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
   news?: Prisma.NewsOmit
+  information?: Prisma.InformationOmit
 }
 
 /* Types for Logging */
