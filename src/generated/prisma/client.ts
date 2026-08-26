@@ -44,3 +44,8 @@ export { Prisma }
  * 
  */
 export type News = Prisma.NewsModel
+/**
+ * Model Information
+ * 
+ */
+export type Information = Prisma.InformationModel

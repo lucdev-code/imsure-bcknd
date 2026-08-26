@@ -22,3 +22,8 @@ export * from './enums';
  * 
  */
 export type News = Prisma.NewsModel
+/**
+ * Model Information
+ * 
+ */
+export type Information = Prisma.InformationModel

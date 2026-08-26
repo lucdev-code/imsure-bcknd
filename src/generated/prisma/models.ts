@@ -9,4 +9,5 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/News'
+export type * from './models/Information'
 export type * from './commonInputTypes'
