@@ -5,12 +5,14 @@ import { AppService } from './app.service';
 import { NewsModule } from './news/news.module';
 import { PrismaService } from './prisma/prisma.service';
 import { PrismaModule } from './prisma/prisma.module';
+import { InformationModule } from './information/information.module';
 
 @Module({
   imports: [NewsModule, PrismaModule,
     ConfigModule.forRoot({
       isGlobal: true,
-    })
+    }),
+    InformationModule
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
