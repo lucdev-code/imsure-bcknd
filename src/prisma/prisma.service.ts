@@ -18,6 +18,8 @@ export class PrismaService
       );
     }
 
+    console.log('DATABASE_URL existe:', !!connectionString);
+
     const adapter = new PrismaPg({
       connectionString,
     });
